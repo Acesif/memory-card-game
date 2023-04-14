@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Card from './components/Card';
 
 const cardImages = [
   {"src":"/images/F-1.png"},
@@ -13,6 +14,8 @@ const cardImages = [
 function App() {
   const [card, setCard] = useState([]);
   const [turn, setTurn] = useState(0);
+  const [choiceOne,setChoiceOne] = useState(null);
+  const [choiceTwo,setChoiceTwo] = useState(null);
   
   const shuffleImg = () =>{
     const shuffledImg = [...cardImages,...cardImages] // spreads two card images object arrays
@@ -22,16 +25,17 @@ function App() {
     setCard(shuffledImg)
     setTurn(0)
   }
+  const handleChoice = (chosenCard) => {
+    choiceOne? setChoiceTwo(chosenCard) : setChoiceOne(chosenCard)
+  }
+
   return (
     <div className="App">
       <h1>Card Matcheroo</h1>
       <button onClick={shuffleImg}>New Game</button>
       <div className="card-grid">
         {card.map(card => (
-          <div key={card.id} className="card">
-            <img width="200rem" src={card.src} alt="card front" className="card-front" />
-            <img src="../images/cover.png" alt="card back" className="card-back" />
-          </div>
+          <Card key={card.id} card={card} handleChoice={handleChoice}/>
         ))}
       </div>
     </div>

@@ -41,11 +41,3 @@ body{
   background-color: rgb(137, 45, 129);
   transition: all 0.2s ease;
 }
-.card-grid{
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
-  gap: 1rem
-}
-.card-grid .card-back{
-  display: none;
-}

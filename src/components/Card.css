@@ -1,0 +1,8 @@
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 1rem
+  }
+  /* .card-grid .card-back{
+    display: none;
+  } */
