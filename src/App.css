@@ -27,6 +27,7 @@ body{
 }
 .App button{
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
   background-color: var(--bgc);
   border: 1px black solid;
   padding: 1rem 2rem;
@@ -39,4 +40,12 @@ body{
   color: rgba(255, 255, 255, 0.529);
   background-color: rgb(137, 45, 129);
   transition: all 0.2s ease;
+}
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 1rem
+}
+.card-grid .card-back{
+  display: none;
 }

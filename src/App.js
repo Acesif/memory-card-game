@@ -26,6 +26,14 @@ function App() {
     <div className="App">
       <h1>Card Matcheroo</h1>
       <button onClick={shuffleImg}>New Game</button>
+      <div className="card-grid">
+        {card.map(card => (
+          <div key={card.id} className="card">
+            <img width="200rem" src={card.src} alt="card front" className="card-front" />
+            <img src="../images/cover.png" alt="card back" className="card-back" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
