@@ -16,6 +16,7 @@ function App() {
   const [turn, setTurn] = useState(0);
   const [choiceOne,setChoiceOne] = useState(null);
   const [choiceTwo,setChoiceTwo] = useState(null);
+  const [win, setWin] = useState(false);
   
   const shuffleImg = () =>{
     const shuffledImg = [...cardImages,...cardImages] // spreads two card images object arrays
@@ -47,29 +48,43 @@ function App() {
           })
         })
         //reset if match
-        resetTurn();
+        resetTurn()
       }
       else{
         //reset if not match
-        resetTurn();
+        setTimeout(() => {
+          resetTurn()
+        }, 1000);
       }
     }
   },[choiceOne,choiceTwo,card]);
-  console.log(card);
 
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
     setTurn((prevTurn) => prevTurn+1)
   }
+  useEffect(() => {   
+    if(card.length !== 0){
+      let winStatus = card.every(card => card.match)
+      setWin(winStatus)
+    }
+  },[setWin,card])
 
   return (
     <div className="App">
       <h1>Card Matcheroo</h1>
+      {turn !==0 && <h3>{`Turn: ${turn}`}</h3>}
+      {win && <h1 style={{color: "greenyellow"}}>Winner</h1>}
       <button onClick={shuffleImg}>New Game</button>
       <div className="card-grid">
         {card.map(card => (
-          <Card key={card.id} card={card} handleChoice={handleChoice}/>
+          <Card 
+            key={card.id} 
+            card={card} 
+            handleChoice={handleChoice}
+            flip = {card === choiceOne || card === choiceTwo || card.match}
+          />
         ))}
       </div>
     </div>

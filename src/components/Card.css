@@ -1,8 +1,27 @@
 .card-grid{
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    gap: 1rem
+    gap: 1rem;
+    position: relative;
   }
-  /* .card-grid .card-back{
-    display: none;
-  } */
+  .card{
+    cursor: pointer;
+  }
+  .card .card-front{
+    position: absolute;
+    transform: rotateY(90deg);
+    transition: transform 0.2s ease-in;
+  }
+  .flipped .card-front{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+  }
+  .card .card-back{
+    transition: transform 0.2s ease-in;
+    transition-delay: 0.2s;
+  }
+  .flipped .card-back{
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+  }
+
