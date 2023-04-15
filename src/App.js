@@ -3,12 +3,12 @@ import './App.css';
 import Card from './components/Card';
 
 const cardImages = [
-  {"src":"/images/F-1.png"},
-  {"src":"/images/F-2.png"},
-  {"src":"/images/W-1.png"},
-  {"src":"/images/W-2.png"},
-  {"src":"/images/G-1.png"},
-  {"src":"/images/G-2.png"},
+  {"src":"/images/F-1.png", match: false},
+  {"src":"/images/F-2.png", match: false},
+  {"src":"/images/W-1.png", match: false},
+  {"src":"/images/W-2.png", match: false},
+  {"src":"/images/G-1.png", match: false},
+  {"src":"/images/G-2.png", match: false},
 ]
 
 function App() {
@@ -32,11 +32,30 @@ function App() {
   useEffect(() => {
     if(choiceOne && choiceTwo){
       if(choiceOne.src === choiceTwo.src){
-        console.log("match");
+        //fetching previous values of the card
+        setCard(prevCard => {
+          //mapping over each card in the prevCard array
+          return prevCard.map(iterCard => {
+            //if the iterated card source matches the choice
+            if(iterCard.src === choiceOne.src){
+              //set match to be true and return the updated array
+              return {...iterCard, match: true}
+            }
+            else{
+              return iterCard
+            }
+          })
+        })
+        //reset if match
+        resetTurn();
       }
-      resetTurn();
+      else{
+        //reset if not match
+        resetTurn();
+      }
     }
-  },[choiceOne,choiceTwo]);
+  },[choiceOne,choiceTwo,card]);
+  console.log(card);
 
   const resetTurn = () => {
     setChoiceOne(null)
