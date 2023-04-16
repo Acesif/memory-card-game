@@ -17,6 +17,7 @@ function App() {
   const [choiceOne,setChoiceOne] = useState(null);
   const [choiceTwo,setChoiceTwo] = useState(null);
   const [win, setWin] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   
   const shuffleImg = () =>{
     const shuffledImg = [...cardImages,...cardImages] // spreads two card images object arrays
@@ -32,6 +33,7 @@ function App() {
   // comparing cards
   useEffect(() => {
     if(choiceOne && choiceTwo){
+      setDisabled(true)
       if(choiceOne.src === choiceTwo.src){
         //fetching previous values of the card
         setCard(prevCard => {
@@ -63,6 +65,7 @@ function App() {
     setChoiceOne(null)
     setChoiceTwo(null)
     setTurn((prevTurn) => prevTurn+1)
+    setDisabled(false)
   }
   useEffect(() => {   
     if(card.length !== 0){
@@ -84,6 +87,7 @@ function App() {
             card={card} 
             handleChoice={handleChoice}
             flip = {card === choiceOne || card === choiceTwo || card.match}
+            disable = {disabled}
           />
         ))}
       </div>

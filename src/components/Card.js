@@ -1,9 +1,11 @@
 import React from 'react'
 import './Card.css'
-export default function Card({card,handleChoice,flip}) {
+export default function Card({card,handleChoice,flip,disable}) {
   
   const handleSelect = () => {
-    handleChoice(card)
+    if(!disable){
+      handleChoice(card)
+    }
   }  
   return (
     <div className={`card ${flip?"flipped":""}`}>
