@@ -1,3 +1,3 @@
 # Memory Card Game
 
-![Game Preview](/images/preview.png)
+![Game Preview](src/images/preview.png)
