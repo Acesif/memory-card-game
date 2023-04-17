@@ -3,12 +3,12 @@ import './App.css';
 import Card from './components/Card';
 
 const cardImages = [
-  {"src":"/public/images/F-1.png", match: false},
-  {"src":"/public/images/F-2.png", match: false},
-  {"src":"/public/images/W-1.png", match: false},
-  {"src":"/public/images/W-2.png", match: false},
-  {"src":"/public/images/G-1.png", match: false},
-  {"src":"/public/images/G-2.png", match: false},
+  {"src":"./memory-card-card/images/F-1.png", match: false},
+  {"src":"./memory-card-card/images/F-2.png", match: false},
+  {"src":"./memory-card-card/images/W-1.png", match: false},
+  {"src":"./memory-card-card/images/W-2.png", match: false},
+  {"src":"./memory-card-card/images/G-1.png", match: false},
+  {"src":"./memory-card-card/images/G-2.png", match: false},
 ]
 
 function App() {
