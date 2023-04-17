@@ -13,7 +13,7 @@ export default function Card({card,handleChoice,flip,disable}) {
           width="200rem" 
           src={card.src} 
           alt="card front" 
-          className={`card-front`}
+          className="card-front"
         />
         <img 
           width="200rem" 

@@ -1,10 +1,14 @@
 .card-grid{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 1rem;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     position: relative;
   }
   .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
     cursor: pointer;
   }
   .card .card-front{
