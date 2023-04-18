@@ -5,7 +5,7 @@ import Card from './components/Card';
 const cardImages = [
   {"src":"./images/F-1.png", match: false},
   {"src":"./images/F-2.png", match: false},
-  {"src":"./images/W-1.p ng", match: false},
+  {"src":"./images/W-1.png", match: false},
   {"src":"./images/W-2.png", match: false},
   {"src":"./images/G-1.png", match: false},
   {"src":"./images/G-2.png", match: false},
