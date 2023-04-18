@@ -3,12 +3,12 @@ import './App.css';
 import Card from './components/Card';
 
 const cardImages = [
-  {"src":".public/images/F-1.png", match: false},
-  {"src":".public/images/F-2.png", match: false},
-  {"src":".public/images/W-1.p ng", match: false},
-  {"src":".public/images/W-2.png", match: false},
-  {"src":".public/images/G-1.png", match: false},
-  {"src":".public/images/G-2.png", match: false},
+  {"src":"./images/F-1.png", match: false},
+  {"src":"./images/F-2.png", match: false},
+  {"src":"./images/W-1.p ng", match: false},
+  {"src":"./images/W-2.png", match: false},
+  {"src":"./images/G-1.png", match: false},
+  {"src":"./images/G-2.png", match: false},
 ]
 
 function App() {
